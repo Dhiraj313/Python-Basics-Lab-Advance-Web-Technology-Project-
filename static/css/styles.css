@@ -1,0 +1,143 @@
+/* Base */
+:root {
+    --bg: #0b0b0b;
+    --card: #181818;
+    --muted: #9aa3ad;
+    --accent: #e50914;
+}
+
+body {
+    background: var(--bg);
+    color: #fff;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    background: #0f0f0f;
+    border-bottom: 1px solid #222;
+}
+
+.navbar .navbar-brand {
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.brand-icon {
+    font-size: 1.2rem;
+}
+
+.brand-text {
+    font-size: 1.1rem;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(90deg, rgba(20, 20, 20, 0.9), rgba(8, 8, 8, 0.9));
+    border: 1px solid #222;
+}
+
+/* Shelf / horizontal scroller */
+.shelf-row {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.shelf-row::-webkit-scrollbar {
+    height: 10px;
+}
+
+.shelf-row::-webkit-scrollbar-thumb {
+    background: #222;
+    border-radius: 8px;
+}
+
+/* Card */
+.lesson-card {
+    width: 220px;
+    min-width: 220px;
+    background: var(--card);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    scroll-snap-align: start;
+    transition: transform .18s ease, box-shadow .18s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.lesson-card img {
+    height: 130px;
+    object-fit: cover;
+    width: 100%;
+    display: block;
+}
+
+.lesson-card .card-body {
+    padding: 12px;
+    flex: 1 0 auto;
+}
+
+.lesson-card .card-footer {
+    padding: 10px 12px;
+}
+
+/* Hover */
+.lesson-card:hover {
+    transform: translateY(-10px) scale(1.04);
+    box-shadow: 0 24px 50px rgba(0, 0, 0, 0.7);
+}
+
+/* Buttons */
+.btn-start {
+    background: linear-gradient(90deg, var(--accent), #ff6b6b);
+    border: none;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 25px;
+    font-weight: 600;
+    box-shadow: 0 6px 18px rgba(229, 9, 20, 0.18);
+    transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.btn-start:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(229, 9, 20, 0.28);
+}
+
+/* Smaller start button */
+.btn-start-sm {
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: .9rem;
+}
+
+/* Detail page */
+.detail-card {
+    background: #141414;
+    border-radius: 10px;
+    border: 1px solid #222;
+}
+
+.thumb-large {
+    width: 200px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .lesson-card {
+        width: 190px;
+        min-width: 190px;
+    }
+
+    .hero {
+        padding: 18px;
+    }
+}

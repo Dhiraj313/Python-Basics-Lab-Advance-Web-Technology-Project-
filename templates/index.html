@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Hero -->
+<section class="hero rounded-3 p-4 mb-4">
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="container text-center py-5">
+      <h1 class="title-heading">🐍 Python Basics Lab</h1>
+      <p class="lead">Learn Python step by step with interactive lessons</p>
+    </div>
+    <a href="#" class="btn btn-start btn-lg">Get Started</a>
+  </div>
+  </div>
+</section>
+
+<!-- A "shelf" row (horizontal scroll) -->
+<section class="shelf mb-5">
+  <h5 class="shelf-title mb-3">Featured Lessons</h5>
+  <div class="shelf-row">
+    {% for l in lessons %}
+    <div class="card lesson-card">
+      <img src="{{ l.thumbnail }}" class="card-img-top" alt="{{ l.title }}">
+      <div class="card-body">
+        <h6 class="card-title mb-1">{{ l.title }}</h6>
+        <p class="card-text small text-muted">{{ l.description }}</p>
+      </div>
+      <div class="card-footer bg-transparent border-0 d-flex justify-content-between align-items-center">
+        <a href="{{ url_for('lesson', slug=l.slug) }}" class="btn btn-start-sm">Start Learning</a>
+        <button class="btn btn-outline-light btn-sm">Preview</button>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- A second shelf for other categories (demo) -->
+<section class="shelf">
+  <h5 class="shelf-title mb-3">Popular</h5>
+  <div class="shelf-row">
+    {% for l in lessons %}
+    <div class="card lesson-card">
+      <img src="{{ l.thumbnail }}" class="card-img-top" alt="{{ l.title }}">
+      <div class="card-body">
+        <h6 class="card-title mb-1">{{ l.title }}</h6>
+        <p class="card-text small text-muted">{{ l.description }}</p>
+      </div>
+      <div class="card-footer bg-transparent border-0 d-flex justify-content-between align-items-center">
+        <a href="{{ url_for('lesson', slug=l.slug) }}" class="btn btn-start-sm">Start</a>
+        <button class="btn btn-outline-light btn-sm">Details</button>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock %}

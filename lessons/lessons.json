@@ -1,0 +1,269 @@
+{
+  "lessons": [
+    {
+      "id": 1,
+      "title": "Variables & Types",
+      "summary": "Numbers, strings, and variables.",
+      "theory": "<p>Python stores values in <b>variables</b>. Common types are <code>int</code>, <code>float</code>, and <code>str</code>. Use <code>type(x)</code> to check a value's type. You can do math with <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, and <code>//</code> (floor division). Use <code>round(value, ndigits)</code> to format decimals.</p>",
+      "exercises": [
+        {
+          "id": "1-1",
+          "title": "Area of a Circle",
+          "instructions": "Given radius r = 5, compute the area (\u03c0r\u00b2) and print it rounded to 2 decimals.",
+          "starter_code": "r = 5\npi = 3.14159\n# TODO: print the area rounded to 2 decimals\n",
+          "tests": {
+            "type": "stdout_exact",
+            "expected": "78.54"
+          },
+          "hints": [
+            "Use pi * r * r",
+            "Use round(value, 2)."
+          ],
+          "solution_code": "r = 5\npi = 3.14159\narea = pi * r * r\nprint(round(area, 2))"
+        },
+        {
+          "id": "1-2",
+          "title": "String Formatting",
+          "instructions": "Create variables: name='Alex', age=21 and print: Hello, Alex. You are 21.",
+          "starter_code": "name = 'Alex'\nage = 21\n# TODO: print the message exactly\n",
+          "tests": {
+            "type": "stdout_exact",
+            "expected": "Hello, Alex. You are 21."
+          },
+          "hints": [
+            "Use f-strings: f\"Hello, {name}. You are {age}.\""
+          ],
+          "solution_code": "name = 'Alex'\nage = 21\nprint(f\"Hello, {name}. You are {age}.\")"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Conditionals",
+      "summary": "if/elif/else and comparisons.",
+      "theory": "<p>Use <code>if</code>, <code>elif</code>, <code>else</code> to branch logic. Comparison operators include <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>. Combine conditions with <code>and</code>, <code>or</code>, <code>not</code>.</p>",
+      "exercises": [
+        {
+          "id": "2-1",
+          "title": "Even or Odd",
+          "instructions": "Given n=14, print 'even' or 'odd'.",
+          "starter_code": "n = 14\n# TODO: print 'even' or 'odd'\n",
+          "tests": {
+            "type": "stdout_exact",
+            "expected": "even"
+          },
+          "hints": [
+            "Use n % 2 == 0"
+          ],
+          "solution_code": "n = 14\nprint('even' if n % 2 == 0 else 'odd')"
+        },
+        {
+          "id": "2-2",
+          "title": "Grade Category",
+          "instructions": "Given score=77, print 'A' for 85+, 'B' for 70-84, 'C' for 50-69, else 'D'.",
+          "starter_code": "score = 77\n# TODO: print the grade category\n",
+          "tests": {
+            "type": "stdout_exact",
+            "expected": "B"
+          },
+          "hints": [
+            "Order matters: check A first, then B..."
+          ],
+          "solution_code": "score = 77\nif score >= 85:\n    print('A')\nelif score >= 70:\n    print('B')\nelif score >= 50:\n    print('C')\nelse:\n    print('D')"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Lists & Loops",
+      "summary": "for/while loops and list basics.",
+      "theory": "<p>Lists store ordered items: <code>nums = [1,2,3]</code>. Loop with <code>for x in nums</code>. Use <code>append</code> to add and <code>len</code> for size.</p>",
+      "exercises": [
+        {
+          "id": "3-1",
+          "title": "Sum of List",
+          "instructions": "Given nums=[3, 8, 2, 5], print their sum.",
+          "starter_code": "nums = [3, 8, 2, 5]\n# TODO: print the sum\n",
+          "tests": {
+            "type": "stdout_exact",
+            "expected": "18"
+          },
+          "hints": [
+            "Use sum(nums)."
+          ],
+          "solution_code": "nums = [3, 8, 2, 5]\nprint(sum(nums))"
+        },
+        {
+          "id": "3-2",
+          "title": "Max in List (loop)",
+          "instructions": "Without using max(), loop to find the largest in nums=[9, 4, 11, 7] and print it.",
+          "starter_code": "nums = [9, 4, 11, 7]\n# TODO: find largest using a loop\n",
+          "tests": {
+            "type": "stdout_exact",
+            "expected": "11"
+          },
+          "hints": [
+            "Track current best and update inside the loop."
+          ],
+          "solution_code": "nums = [9, 4, 11, 7]\nbest = nums[0]\nfor x in nums:\n    if x > best:\n        best = x\nprint(best)"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Functions",
+      "summary": "Define and call functions.",
+      "theory": "<p>Define functions with <code>def</code>. Use <code>return</code> to send back a value. Keep functions small and focused.</p>",
+      "exercises": [
+        {
+          "id": "4-1",
+          "title": "Add Two Numbers",
+          "instructions": "Write a function add(a, b) that returns their sum.",
+          "starter_code": "def add(a, b):\n    # TODO: return the sum\n    pass\n",
+          "tests": {
+            "type": "function",
+            "name": "add",
+            "cases": [
+              {
+                "args": [
+                  2,
+                  3
+                ],
+                "expect": 5
+              },
+              {
+                "args": [
+                  -1,
+                  5
+                ],
+                "expect": 4
+              }
+            ]
+          },
+          "hints": [
+            "Use return a + b"
+          ],
+          "solution_code": "def add(a, b):\n    return a + b\n"
+        },
+        {
+          "id": "4-2",
+          "title": "Is Palindrome",
+          "instructions": "Write is_palindrome(s) that returns True if s reads the same forward/backward (ignore case).",
+          "starter_code": "def is_palindrome(s):\n    # TODO: return True/False\n    pass\n",
+          "tests": {
+            "type": "function",
+            "name": "is_palindrome",
+            "cases": [
+              {
+                "args": [
+                  "Level"
+                ],
+                "expect": true
+              },
+              {
+                "args": [
+                  "python"
+                ],
+                "expect": false
+              }
+            ]
+          },
+          "hints": [
+            "Normalize with lower()",
+            "Compare to reversed string s[::-1]."
+          ],
+          "solution_code": "def is_palindrome(s):\n    s = s.lower()\n    return s == s[::-1]\n"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Dictionaries & Sets",
+      "summary": "Key-value data and unique collections.",
+      "theory": "<p>Dictionaries map keys to values (<code>{'a':1}</code>). Sets store unique items (<code>{1,2,3}</code>). Iterate with <code>.items()</code> for dicts.</p>",
+      "exercises": [
+        {
+          "id": "5-1",
+          "title": "Word Count",
+          "instructions": "Given text='to be or not to be', build a dict counting each word and print it.",
+          "starter_code": "text = 'to be or not to be'\n# TODO: build a frequency dict and print it\n",
+          "tests": {
+            "type": "stdout_exact",
+            "expected": "{'to': 2, 'be': 2, 'or': 1, 'not': 1}"
+          },
+          "hints": [
+            "Split on spaces",
+            "Update counts in a loop"
+          ],
+          "solution_code": "text = 'to be or not to be'\ncounts = {}\nfor w in text.split():\n    counts[w] = counts.get(w, 0) + 1\nprint(counts)"
+        },
+        {
+          "id": "5-2",
+          "title": "Unique Letters",
+          "instructions": "Given s='mississippi', print the number of unique letters.",
+          "starter_code": "s = 'mississippi'\n# TODO: print count of unique letters\n",
+          "tests": {
+            "type": "stdout_exact",
+            "expected": "4"
+          },
+          "hints": [
+            "Use set(s) and len(...)"
+          ],
+          "solution_code": "s = 'mississippi'\nprint(len(set(s)))"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "File I/O & Exceptions",
+      "summary": "Read/write files and handle errors.",
+      "theory": "<p>Use <code>with open(path, 'w')</code> to write and <code>'r'</code> to read. Wrap risky code in <code>try/except</code> to catch exceptions and keep your program alive.</p>",
+      "exercises": [
+        {
+          "id": "6-1",
+          "title": "Safe Division",
+          "instructions": "Write a function safe_div(a, b) that returns a/b or 'inf' if b==0.",
+          "starter_code": "def safe_div(a, b):\n    # TODO\n    pass\n",
+          "tests": {
+            "type": "function",
+            "name": "safe_div",
+            "cases": [
+              {
+                "args": [
+                  8,
+                  2
+                ],
+                "expect": 4.0
+              },
+              {
+                "args": [
+                  5,
+                  0
+                ],
+                "expect": "inf"
+              }
+            ]
+          },
+          "hints": [
+            "Use try/except ZeroDivisionError"
+          ],
+          "solution_code": "def safe_div(a, b):\n    try:\n        return a / b\n    except ZeroDivisionError:\n        return 'inf'\n"
+        },
+        {
+          "id": "6-2",
+          "title": "Write Then Read",
+          "instructions": "Create a variable msg='hello', write it to a file named data.txt, then print the file contents.",
+          "starter_code": "msg = 'hello'\n# NOTE: In this lab, file operations are disabled for safety, so just print msg.\n# TODO: print the message\n",
+          "tests": {
+            "type": "stdout_exact",
+            "expected": "hello"
+          },
+          "hints": [
+            "For safety, just print the message."
+          ],
+          "solution_code": "msg = 'hello'\nprint(msg)"
+        }
+      ]
+    }
+  ]
+}
