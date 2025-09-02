@@ -13,3 +13,5 @@ Python Basics Lab is a beginner-friendly, interactive web platform responsive Bo
 > Bootstrap 5 (CDN, no installation needed)
 > Browser (Chrome/Firefox/Edge)
 > VS Code or any IDE
+
+<img width="1879" height="910" alt="Screenshot 2025-09-02 075812" src="https://github.com/user-attachments/assets/e221c21b-94d5-47e7-b789-c10168ddf805" />
